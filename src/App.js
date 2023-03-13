@@ -7,23 +7,38 @@ function App(){
   const [lista, setLista] = useState([])
   
   function HandleAddItem(){
-    const item = {'titulo': titulo, 'descricao': descricao, 'data': new Date().toISOString()}
-    setLista([item, ...lista]) 
+    const item = {'titulo': titulo, 'descricao': descricao, 'data': new Date().toLocaleDateString()}
+    setLista([item, ...lista])
+    
   }
   return(
-    <div>
+    <div className="main-content">
+      <header>
+        <section className="text">
+        <h1>Bem-vindo!</h1>
+        <h2>Comece a agendar suas tarefas diárias.</h2>
+        </section>
+        <p class="data-header">{new Date().toDateString()}</p>
+      </header>
+      <section className="main-section">
+      <div className="add-task-container">
+        <h2>Criar nova tarefa:</h2>
+      <div className="add-task">
       <input value={titulo} onChange={e => setTitulo(e.target.value)} placeholder='Título'></input>
       <input value={descricao} onChange={e => setDescricao(e.target.value)} placeholder='Descrição'></input>
-      <button onClick={HandleAddItem}>Adicionar</button>
-      <ul>
+      <button type="button" onClick={HandleAddItem}>Adicionar</button>
+      </div>
+      </div>
+      <section className="feed">
         {lista.map(t => (
-          <li><div>
+          <div className="tarefa">
           <h1>{t.titulo}</h1>
-          <p>{t.descricao}</p>
+          <h2>{t.descricao}</h2>
           <p>{t.data}</p>
-      </div></li>
+      </div>
         ))}
-      </ul>
+      </section>
+      </section>
     </div>
   )
 }

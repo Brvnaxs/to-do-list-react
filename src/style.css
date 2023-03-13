@@ -1,4 +1,144 @@
-div {
-    background-image:  linear-gradient(180deg, #615085 0%, #180A37 100%);
-    height: 100vh;
-  }
+:root{
+  --fonte-principal: 'Manrope', sans-serif;
+  --cor-principal: #9B5B7D;
+  --cor-clara: #E2D0D6;
+  --cor-fonte: #8B4869;
+  --background-body: linear-gradient(
+    45deg,
+    hsl(330deg 32% 41%) 0%,
+    hsl(330deg 30% 43%) 9%,
+    hsl(329deg 28% 45%) 18%,
+    hsl(329deg 27% 47%) 27%,
+    hsl(338deg 24% 51%) 36%,
+    hsl(9deg 27% 58%) 45%,
+    hsl(27deg 38% 60%) 55%,
+    hsl(37deg 49% 62%) 64%,
+    hsl(36deg 48% 68%) 73%,
+    hsl(29deg 41% 75%) 82%,
+    hsl(16deg 31% 81%) 91%,
+    hsl(340deg 24% 85%) 100%
+  );
+  --shadow: (-webkit-box-shadow: -4px 17px 42px 0px rgba(226,208,214,1);
+  -moz-box-shadow: -4px 17px 42px 0px rgba(226,208,214,1);
+  box-shadow: -4px 17px 42px 0px rgba(226,208,214,1);)
+}
+body{
+  background-image: var(--background-body);
+  background-attachment: fixed;
+}
+header{
+  height: fit-content;
+  border: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.main-content{
+ height: 100vh;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ background-attachment: fixed;
+}
+header h1{
+  font-family:'Oswald', sans-serif;
+  color: var(--cor-clara);
+  font-size: 2rem;
+  margin-bottom: 0;
+  letter-spacing: 3px;
+  padding-left: 60px;
+}
+header h2{
+  color: var(--cor-clara);
+  font-size: 1rem;
+  font-family: var(--fonte-principal);
+  padding-left: 60px;
+}
+header p{
+  color: var(--cor-fonte);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-family: var(--fonte-principal);
+  padding-right: 60px;
+}
+.add-task-container{
+  height: 370px;
+  width: 280px;
+  background-color: rgb(255, 255, 255, 0.50);
+  padding: 10px;
+  font-family: var(--fonte-principal);
+  color: var(--cor-fonte);
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 1px 1px 1px 1px rgb(77, 77, 77);
+}
+.add-task-container input:focus{
+  outline: none;
+}
+
+.add-task-container input{
+  background: none;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 3px;
+}
+.add-task{
+  height: 100px;
+  width: 260px;
+  box-shadow: 1px 1px 2px 1px rgb(124, 124, 124);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 10px;
+}
+.add-task button{
+  align-self: flex-end;
+}
+.feed{
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+  width: 700px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+.main-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: center;
+  height: fit-content;
+  width: 100%;
+  background-attachment: fixed;
+}
+
+.tarefa{
+  height: 100px;
+  width: 260px;
+  box-shadow: 1px 1px 2px 1px rgb(124, 124, 124);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px;
+  border-radius: 10px; 
+  color: white;
+  font-family: var(--fonte-principal);
+  background-color: rgb(255, 255, 255, 0.50);
+  margin-bottom: 5px;
+}
+.tarefa h1{
+  font-size: 1.5rem;
+  margin-bottom: 0%;
+  margin-top: 0%;
+}
+.tarefa h2{
+  font-size: 1rem;
+  margin-bottom: 0%;
+}
+.tarefa p{
+  font-size: 1rem;
+  margin-bottom: 0%;
+}
