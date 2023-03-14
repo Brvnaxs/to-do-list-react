@@ -14,21 +14,20 @@ function App(){
   return(
     <div className="main-content">
       <header>
-        <section className="text">
+        <p className="data-header">{new Date().toDateString()}</p>
+      </header>
+      <div className="add-task-container">
         <h1>Bem-vindo!</h1>
         <h2>Comece a agendar suas tarefas diárias.</h2>
-        </section>
-        <p class="data-header">{new Date().toDateString()}</p>
-      </header>
-      <section className="main-section">
-      <div className="add-task-container">
         <h2>Criar nova tarefa:</h2>
-      <div className="add-task">
-      <input value={titulo} onChange={e => setTitulo(e.target.value)} placeholder='Título'></input>
-      <input value={descricao} onChange={e => setDescricao(e.target.value)} placeholder='Descrição'></input>
-      <button type="button" onClick={HandleAddItem}>Adicionar</button>
+        <div className="add-task">
+          <input value={titulo} onChange={e => setTitulo(e.target.value)} placeholder='Título'></input>
+          <input value={descricao} onChange={e => setDescricao(e.target.value)} placeholder='Descrição'></input>
+          <button type="button" onClick={HandleAddItem}>Adicionar</button>
+        </div>
       </div>
-      </div>
+      
+      {/*<section className="main-section">
       <section className="feed">
         {lista.map(t => (
           <div className="tarefa">
@@ -38,7 +37,8 @@ function App(){
       </div>
         ))}
       </section>
-      </section>
+      </section>*/}
+      
     </div>
   )
 }

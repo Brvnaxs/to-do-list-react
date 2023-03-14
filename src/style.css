@@ -23,7 +23,8 @@
   box-shadow: -4px 17px 42px 0px rgba(226,208,214,1);)
 }
 body{
-  background-image: var(--background-body);
+  background-image: url("./back.jpg");
+  background-size: 1920px 1000px;
   background-attachment: fixed;
 }
 header{
@@ -31,9 +32,9 @@ header{
   border: none;
   width: 100%;
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-end;
 }
 .main-content{
  height: 100vh;
@@ -42,37 +43,23 @@ header{
  flex-direction: column;
  background-attachment: fixed;
 }
-header h1{
-  font-family:'Oswald', sans-serif;
-  color: var(--cor-clara);
-  font-size: 2rem;
-  margin-bottom: 0;
-  letter-spacing: 3px;
-  padding-left: 60px;
-}
-header h2{
-  color: var(--cor-clara);
-  font-size: 1rem;
-  font-family: var(--fonte-principal);
-  padding-left: 60px;
-}
+
 header p{
   color: var(--cor-fonte);
   font-size: 1rem;
   text-transform: uppercase;
   font-family: var(--fonte-principal);
   padding-right: 60px;
+  align-self: flex-end;
 }
 .add-task-container{
-  height: 370px;
+  height: 100%;
+  position: absolute;
+  align-self: flex-start;
   width: 280px;
-  background-color: rgb(255, 255, 255, 0.50);
+  background-color: #FFF;
   padding: 10px;
   font-family: var(--fonte-principal);
-  color: var(--cor-fonte);
-  border-radius: 10px;
-  margin-top: 10px;
-  box-shadow: 1px 1px 1px 1px rgb(77, 77, 77);
 }
 .add-task-container input:focus{
   outline: none;
