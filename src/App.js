@@ -1,5 +1,13 @@
 import {useState} from 'react'
-import './style.css'
+import {BiSun} from "react-icons/bi";
+import { BiCalendarAlt } from "react-icons/bi";
+import { BiCheckCircle } from "react-icons/bi";
+import {BiUser} from "react-icons/bi";
+import {BiCheckSquare} from "react-icons/bi";
+import {CiStar} from "react-icons/ci";
+import {CiRepeat} from "react-icons/ci";
+import { TiHeartOutline} from "react-icons/ti";
+import './main.css'
 function App(){
   const [titulo, setTitulo] = useState()
   const [descricao, setDescricao] = useState()
@@ -14,31 +22,32 @@ function App(){
   return(
     <div className="main-content">
       <header>
-        <p className="data-header">{new Date().toDateString()}</p>
+        <p>{new Date().toDateString()}</p>
       </header>
       <div className="add-task-container">
-        <h1>Bem-vindo!</h1>
+        <h1> Bem-vindo! <TiHeartOutline/></h1>
         <h2>Comece a agendar suas tarefas diárias.</h2>
-        <h2>Criar nova tarefa:</h2>
-        <div className="add-task">
-          <input value={titulo} onChange={e => setTitulo(e.target.value)} placeholder='Título'></input>
-          <input value={descricao} onChange={e => setDescricao(e.target.value)} placeholder='Descrição'></input>
-          <button type="button" onClick={HandleAddItem}>Adicionar</button>
-        </div>
+        <p><BiSun className='icon'/>My Day</p>
+        <p><CiStar className='icon'/>Important</p>
+        <p><BiCalendarAlt className='icon'/>Planned</p>
+        <p><CiRepeat className='icon'/>All</p>
+        <p><BiCheckCircle className='icon'/>Completed</p>
+        <p><BiUser className='icon'/>Assigned to me</p>
+        <p><BiCheckSquare className='icon'/>Tasks</p>
       </div>
-      
-      {/*<section className="main-section">
-      <section className="feed">
-        {lista.map(t => (
-          <div className="tarefa">
-          <h1>{t.titulo}</h1>
-          <h2>{t.descricao}</h2>
-          <p>{t.data}</p>
-      </div>
-        ))}
-      </section>
-      </section>*/}
-      
+        <section className='tasks-timeline'>
+          <div className='task'>
+            <input value={descricao} onChange={e => setDescricao(e.target.value)} placeholder='Digite aqui...'></input>
+            <button type="button" onClick={HandleAddItem}>Adicionar</button>
+          </div>
+              {lista.map(t => (
+                  <div className="task">
+                    <input type='checkbox' className='check'></input>
+                    <p>{t.descricao}</p>
+                    <span>{t.data}</span>
+                  </div>
+                ))}
+        </section>  
     </div>
   )
 }
